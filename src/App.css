@@ -1,0 +1,315 @@
+/* Remove all default margins/padding */
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.homePageWrapper {
+  top: 20%;
+  display: flex; /* REQUIRED to use justify & align */
+  flex-direction: column;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  /* height: 100vh; full screen height */
+  text-align: center; /* optional – centers inline text */
+  z-index: 1;
+  position: relative;
+}
+
+.intro {
+  margin-bottom: 40px;
+}
+
+.introHeading {
+  font-size: 55px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.introSubHeading {
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: 200;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputDomain {
+  padding: 5px 15px;
+  background: #f1f3f4;
+  text-align: center;
+  justify-content: center;
+  border: 0.5px solid #555;
+  border-right: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 20px;
+  color: #555;
+  font-weight: 350;
+}
+
+.inputBox {
+  padding: 5px;
+  text-align: left;
+  background: #f1f3f4;
+  /* border: 0.5px solid #555; */
+  /* border-left: 0.5px solid #777; */
+  /* border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px; */
+  height: 20px;
+  color: #555;
+  font-weight: 350;
+  font-style: italic;
+}
+
+/* CSS */
+.inputGo,
+.inputCreateRoom {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 7px;
+  margin-right: 5px;
+}
+
+.inputGo:hover,
+.inputCreateRoom:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.inputGo:focus,
+.inputCreateRoom:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+}
+
+/* CSS
+.inputCreateRoom {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.inputCreateRoom::after,
+.inputCreateRoom::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all 0.4s;
+}
+
+.inputCreateRoom::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.inputCreateRoom::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.inputCreateRoom:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.inputCreateRoom:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.inputCreateRoom:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+} */
+
+.inputDomain {
+  --b: 1px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: #373b44;
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* CSS */
+.inputBox {
+  --b: 1px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: #373b44;
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.inputBox:hover,
+.inputBox:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+
+/* .inputBox:active {
+  background: var(--color);
+  color: #fff;
+} */
+/* 
+body {
+  background: linear-gradient(90deg, #f7f4f5, #dcc9b6d0);
+}
+
+.homePageWrapper::before {
+  background: linear-gradient(90deg, #f7f4f5, #d8d3cec0);
+  position: absolute;
+  content: "";
+  left: 30%;
+  top: 0%;
+  width: 600px;
+  height: 450px;
+
+  border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+  will-change: border-radius, transform, opacity;
+  animation: sliderShape 5s linear infinite;
+  display: block;
+  z-index: -1;
+  -webkit-animation: sliderShape 5s linear infinite;
+}
+@keyframes sliderShape {
+  0%,
+  100% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  34% {
+    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+  }
+  50% {
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+  }
+} */
+
+.footer {
+  bottom: 20px;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 9;
+}
+
+.footer > p > a {
+  text-decoration: none;
+  color: black;
+  color: rgb(129, 3, 3);
+}
+.footer > p > a:hover {
+  text-decoration-line: underline;
+}
+
+.footer > p > span {
+  color: rgb(160, 160, 15);
+}
