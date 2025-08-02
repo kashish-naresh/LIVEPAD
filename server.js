@@ -29,9 +29,9 @@ io.on("connection", (socket) => {
 });
 
 // Serve static files from build directory
-app.use(express.static("build"));
+app.use(express.static("client/build"));
 app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
 // Store room states (roomID -> currentCode)
