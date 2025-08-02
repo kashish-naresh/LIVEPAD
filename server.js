@@ -10,7 +10,10 @@ const server = http.createServer(app);
 // server.js
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: [
+      "http://localhost:3000", // Local dev
+      "https://livepad-rwvk.onrender.com", // ✅ Add your deployed frontend
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   },

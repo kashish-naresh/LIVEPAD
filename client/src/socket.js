@@ -4,10 +4,14 @@ import { io } from "socket.io-client";
 let socket;
 let reconnectAttempts = 0;
 const MAX_RECONNECT_ATTEMPTS = 5;
+const SOCKET_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://livepad-rwvk.onrender.com" // Your deployed server
+    : "http://localhost:5000"; // Local dev
 
 export const initSocket = () => {
   if (!socket || socket.disconnected) {
-    socket = io("http://localhost:5000", {
+    socket = io(SOCKET_URL, {
       // Critical settings
       transports: ["websocket"],
       upgrade: false,
